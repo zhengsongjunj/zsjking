@@ -2,6 +2,7 @@ package com.zking.zsjking.api.v1;
 import com.zking.zsjking.sample.SkillImpl;
 import com.zking.zsjking.sample.hero.Diana;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,17 +18,13 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/v1/banner")
 public class BannerController {
-    //    @Autowired
-    private SkillImpl diana;
-
     @Autowired
-    public void setDiana(Diana diana) {
-        this.diana = diana;
-    }
+    @Qualifier("irelia")
+    private SkillImpl iSkill;
 
     @GetMapping("/test")
     public String test()  {
-        diana.r();
+        iSkill.r();
         return "hello world!";
     }
 }
