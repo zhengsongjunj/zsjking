@@ -1,24 +1,26 @@
 package com.zking.zsjking.api.v1;
+import com.zking.zsjking.sample.hero.Diana;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.DataInput;
 import java.io.IOException;
 
-@Controller
-// 加上注解他就变成了一个构造器
+@RestController
+@RequestMapping("/v1/banner")
 public class BannerController {
-    // MVC SpringMVC
-    // Controller Model View
-    // 一个控制器下面有多个路由控制的方法
+    @Autowired
+    private Diana diana;
 
     @GetMapping("/test")
-    @ResponseBody
-    // get 请求 test执行当前方法
-    public String test(HttpServletResponse response)  {
-        // response.getWriter().write("hello world");
+    public String test()  {
+        diana.r();
         return "hello world!";
     }
 }
