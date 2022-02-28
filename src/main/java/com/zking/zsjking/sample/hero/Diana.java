@@ -4,10 +4,9 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 @Component
-@Lazy
 public class Diana {
     public Diana () {
-        System.out.println("我被实例化了！");
+        System.out.println("我被构造函数注入了！");
     }
 
     public void q() {

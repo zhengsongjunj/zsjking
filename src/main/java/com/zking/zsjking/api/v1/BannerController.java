@@ -14,11 +14,14 @@ import java.io.DataInput;
 import java.io.IOException;
 
 @RestController
-@Lazy
 @RequestMapping("/v1/banner")
 public class BannerController {
-    @Autowired
+//    @Autowired
     private Diana diana;
+
+    public BannerController(Diana diana) {
+       this.diana = diana;
+    }
 
     @GetMapping("/test")
     public String test()  {
