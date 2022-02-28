@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Diana {
     public Diana () {
-        System.out.println("我被构造函数注入了！");
+        System.out.println("setting 注入！");
     }
 
     public void q() {
