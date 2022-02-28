@@ -1,4 +1,5 @@
 package com.zking.zsjking.api.v1;
+import com.zking.zsjking.sample.SkillImpl;
 import com.zking.zsjking.sample.hero.Diana;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -17,7 +18,7 @@ import java.io.IOException;
 @RequestMapping("/v1/banner")
 public class BannerController {
     //    @Autowired
-    private Diana diana;
+    private SkillImpl diana;
 
     @Autowired
     public void setDiana(Diana diana) {

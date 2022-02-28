@@ -1,10 +1,11 @@
 package com.zking.zsjking.sample.hero;
 
+import com.zking.zsjking.sample.SkillImpl;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Diana {
+public class Diana implements SkillImpl {
     public Diana () {
         System.out.println("setting 注入！");
     }
