@@ -19,12 +19,12 @@ import java.io.IOException;
 @RequestMapping("/v1/banner")
 public class BannerController {
     @Autowired
-    @Qualifier("irelia")
-    private SkillImpl iSkill;
+//    @Qualifier("irelia")
+    private SkillImpl camille;
 
     @GetMapping("/test")
     public String test()  {
-        iSkill.r();
+        camille.r();
         return "hello world!";
     }
 }

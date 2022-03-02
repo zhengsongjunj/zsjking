@@ -2,17 +2,19 @@ package com.zking.zsjking.sample.hero;
 
 import com.zking.zsjking.sample.SkillImpl;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Diana implements SkillImpl {
     public Diana () {
-        System.out.println("setting 注入！");
+        System.out.println("hello Diana");
     }
 
     public void q() {
         System.out.println("dian q");
     }
+
     public void w() {
         System.out.println("dian w");
     }

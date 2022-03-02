@@ -3,8 +3,11 @@ package com.zking.zsjking.sample.hero;
 import com.zking.zsjking.sample.SkillImpl;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Camille implements SkillImpl {
+    public Camille(){
+        System.out.println("hello camiile");
+    }
     public void q() {
         System.out.println("Camille q");
     }

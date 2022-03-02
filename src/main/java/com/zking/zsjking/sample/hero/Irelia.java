@@ -5,6 +5,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Irelia implements SkillImpl {
+    public Irelia() {
+        System.out.println("hello Irelia");
+    }
+
     public void q() {
         System.out.println("Irelia q");
     }
