@@ -13,7 +13,7 @@ public class MySQL implements ConnectImpl {
 
     @Override
     public void connect(){
-
+        System.out.println(this.ip + ":" + this.port);
     }
 
     public void setIp(String ip) {

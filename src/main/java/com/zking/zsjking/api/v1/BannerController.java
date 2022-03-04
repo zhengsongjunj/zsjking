@@ -1,4 +1,5 @@
 package com.zking.zsjking.api.v1;
+import com.zking.zsjking.sample.ConnectImpl;
 import com.zking.zsjking.sample.SkillImpl;
 import com.zking.zsjking.sample.hero.Diana;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +23,16 @@ public class BannerController {
 //    @Qualifier("irelia")
     private SkillImpl camille;
 
+    @Autowired
+    private ConnectImpl MySQL;
+
     @GetMapping("/test")
     public String test()  {
         camille.r();
         return "hello world!";
+    }
+    @GetMapping("/test1")
+    public void test1(){
+        MySQL.connect();
     }
 }
