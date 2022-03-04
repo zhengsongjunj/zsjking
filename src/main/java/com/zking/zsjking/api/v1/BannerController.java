@@ -20,19 +20,18 @@ import java.io.IOException;
 @RequestMapping("/v1/banner")
 public class BannerController {
     @Autowired
-//    @Qualifier("irelia")
-    private SkillImpl camille;
+    private SkillImpl skillImpl;
 
     @Autowired
-    private ConnectImpl MySQL;
+    private ConnectImpl connect;
 
     @GetMapping("/test")
     public String test()  {
-        camille.r();
+        skillImpl.r();
         return "hello world!";
     }
     @GetMapping("/test1")
     public void test1(){
-        MySQL.connect();
+        connect.connect();
     }
 }

@@ -3,7 +3,7 @@ package com.zking.zsjking.sample.hero;
 import com.zking.zsjking.sample.SkillImpl;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Irelia implements SkillImpl {
     public Irelia() {
         System.out.println("hello Irelia");

@@ -1,11 +1,7 @@
 package com.zking.zsjking.sample.hero;
 
 import com.zking.zsjking.sample.SkillImpl;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
 
-@Component
 public class Diana implements SkillImpl {
     public Diana () {
         System.out.println("hello Diana");
