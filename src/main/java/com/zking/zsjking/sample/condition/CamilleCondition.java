@@ -7,7 +7,7 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
 public class CamilleCondition implements Condition {
     @Override
     public boolean matches(ConditionContext conditionContext, AnnotatedTypeMetadata annotatedTypeMetadata) {
-        // 判断逻辑
-        return true;
+        String name = conditionContext.getEnvironment().getProperty("hero.name");
+        return "camille".equalsIgnoreCase(name);
     }
 }
