@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.ws.http.HTTPException;
 import java.io.DataInput;
 import java.io.IOException;
 
@@ -26,12 +27,13 @@ public class BannerController {
     private ConnectImpl connect;
 
     @GetMapping("/test")
-    public String test()  {
+    public String test() throws Exception {
         skillImpl.r();
-        return "hello world!";
+        throw new Exception("这里错了");
+//        return "hello world!";
     }
-    @GetMapping("/test1")
-    public void test1(){
-        connect.connect();
-    }
+//    @GetMapping("/test1")
+//    public void test1(){
+//        connect.connect();
+//    }
 }
