@@ -3,8 +3,8 @@ package com.zking.zsjking.sample.database;
 import com.zking.zsjking.sample.ConnectImpl;
 
 public class MySQL implements ConnectImpl {
-    private String ip;
-    private Integer port;
+    private String ip = "192.0.0.200";
+    private Integer port = 6060;
 
     public MySQL(String ip, Integer port) {
         this.ip = ip;

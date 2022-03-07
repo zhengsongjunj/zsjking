@@ -20,7 +20,7 @@ import java.io.DataInput;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("/v1/banner")
+@RequestMapping("/banner")
 public class BannerController {
     @Autowired
     private SkillImpl skillImpl;
