@@ -1,4 +1,5 @@
 package com.zking.zsjking.api.v1;
+import com.zking.zsjking.exception.http.NotFoundException;
 import com.zking.zsjking.sample.ConnectImpl;
 import com.zking.zsjking.sample.SkillImpl;
 import com.zking.zsjking.sample.hero.Diana;
@@ -29,11 +30,8 @@ public class BannerController {
     @GetMapping("/test")
     public String test() throws Exception {
         skillImpl.r();
-        throw new Exception("这里错了");
+        throw new RuntimeException("测试错误");
+//        throw new Exception("这里错了");
 //        return "hello world!";
     }
-//    @GetMapping("/test1")
-//    public void test1(){
-//        connect.connect();
-//    }
 }
