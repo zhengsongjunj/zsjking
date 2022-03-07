@@ -1,8 +1,13 @@
 package com.zking.zsjking.core;
 
 
+import com.zking.zsjking.core.configuration.ExceptionCodeConfiguration;
 import com.zking.zsjking.exception.http.HttpException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -12,6 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 
 @ControllerAdvice
 public class GlobalExceptionAdvice {
+    @Autowired
+    private ExceptionCodeConfiguration codeConfiguration;
 
     // 处理未知异常
     @ExceptionHandler(value=Exception.class) // 监听异常是非常宽泛的，并不是一个具体的异常，这个其实算是未知异常
@@ -29,7 +36,15 @@ public class GlobalExceptionAdvice {
 
     // 处理已知异常
     @ExceptionHandler(HttpException.class)
-    public void handleHttpException(HttpServletRequest req,Exception e) {
-        System.out.println("hello");
+    public ResponseEntity<UnifyResponse> handleHttpException(HttpServletRequest req, HttpException e) {
+        String url = req.getRequestURI();
+        String method = req.getMethod();
+        // 我们应该返回一个ResponseEntity  // 设置很多属性，header body等，这种形式的控制，更加灵活一点
+        UnifyResponse message = new UnifyResponse(e.getCode(),codeConfiguration.getMessage(e.getCode()),method + "" + url);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        HttpStatus httpStatus = HttpStatus.resolve(e.getHttpStatusCode());
+        ResponseEntity<UnifyResponse> r = new ResponseEntity<UnifyResponse>(message,headers,httpStatus);
+        return r;
     }
 }
