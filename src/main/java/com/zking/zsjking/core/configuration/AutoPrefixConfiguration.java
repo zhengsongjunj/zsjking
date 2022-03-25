@@ -1,5 +1,4 @@
 package com.zking.zsjking.core.configuration;
-
 import com.zking.zsjking.core.hack.AutoPrefixUrlMapping;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcRegistrations;
 import org.springframework.stereotype.Component;
