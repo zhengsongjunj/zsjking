@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: dev
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+zsj:
+  api-package: com.zking.zsjking.api
+
+
